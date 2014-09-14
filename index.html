@@ -1,7 +1,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -33,13 +33,12 @@
 	</style>
 <script>
 $(document).ready(function(){
+    //DEFINING VARIABLES
 	var words = new Array();
 	var eng_words = new Array();
 	var rus_words = new Array();
 
-	var xml_name = 'words.xml';
-	$.post('create_xml.php', {name: xml_name});
-
+    //PARSING FILE WITH WORDS
     $.get('words.txt', function(data){
         words = data.split('\n');
         parse_words(words);
@@ -51,7 +50,6 @@ $(document).ready(function(){
 			var eng = parts[parts.length - 2];
 			var rus = parts[parts.length - 1];
 
-    		
     		eng_words.push(eng);
 
     		if (rus.indexOf(',') !== -1){
@@ -65,6 +63,7 @@ $(document).ready(function(){
     	}
     }
 
+    //BUILDING QUESTIONS
     $('#button').click(function() {
     	build_question();
     	$('#button').fadeOut();
@@ -100,6 +99,7 @@ $(document).ready(function(){
    		});
 	}
 
+    //SHUFFLE ARRAY TO SHUFFLE VARIANTS
 	function shuffle(array) {
   		var currentIndex = array.length, temporaryValue, randomIndex ;
 		while (0 !== currentIndex) {
@@ -111,7 +111,6 @@ $(document).ready(function(){
     		array[currentIndex] = array[randomIndex];
     		array[randomIndex] = temporaryValue;
   		}
-
   		return array;
 	}
 

@@ -5,6 +5,6 @@ Two branches available for now:<br>
 This version is published here:
 http://78.47.89.35/words
 
-Словарь терминов:
-• Форво — сервис, предоставляющий озвучку слов: http://api.forvo.com.
+Словарь терминов:<br>
+• Форво — сервис, предоставляющий озвучку слов: http://api.forvo.com.<br>
 • Сэмпл — набор из N слов, выбранный из текущего словаря.
